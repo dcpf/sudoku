@@ -13,7 +13,7 @@ document.addEventListener('puzzleArrayChangeEvent', function (e) {
 /*
 document.addEventListener('sudokuBoardChangeEvent', function (e) {
     var arr = boardToArray();
-    var bool = equals(arr, puzzleArray);
+    var bool = Sudoku.equals(arr, strippedPuzzleArray);
     document.getElementById('resetPuzzleButton').disabled = bool;
 }, false);
 */
