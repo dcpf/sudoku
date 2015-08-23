@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2015 dpf, dpf@theworld.com -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sudoku</title>
+  <style>
+  body {
+    font-family: arial;
+    text-align: center;
+  }
+  body * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #sudokuBoard table {
+    border-collapse: collapse;
+  }
+  #sudokuBoard table td {
+    border: solid 1px black;
+    font-size: 25px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <div id="sudokuBoard"></div>
+  <p>
+    <!-- <button type="button" id="clearPuzzleButton" title="Clear the Sudoku board">Clear Puzzle</button> -->
+    <button type="button" id="resetPuzzleButton" title="Reset the puzzle to its original state" disabled>Reset Puzzle</button>
+    <button type="button" id="solvePuzzleButton" title="Solve the puzzle in its current state">Solve Puzzle</button>
+    <button type="button" id="generateNewPuzzleButton" title="Generate a new puzzle">Generate New Puzzle</button>
+  </p>
+  <p id="msg"></p>
+</body>
+<script src="Sudoku.js"></script>
+<script src="view.js"></script>
+<script>
+'use strict';
+
+//document.getElementById('clearPuzzleButton').onclick = clearBoard;
+document.getElementById('resetPuzzleButton').onclick = resetPuzzle;
+document.getElementById('solvePuzzleButton').onclick = solveIt;
+document.getElementById('generateNewPuzzleButton').onclick = generateNewPuzzle;
+
+
+buildSudokuBoard();
+generateNewPuzzle();
+//setInterval(examineBoardState, 400);
+
+</script>
+</html>
