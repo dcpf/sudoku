@@ -35,20 +35,5 @@
   </p>
   <p id="msg"></p>
 </body>
-<script src="Sudoku.js"></script>
-<script src="view.js"></script>
-<script>
-'use strict';
-
-//document.getElementById('clearPuzzleButton').onclick = clearBoard;
-document.getElementById('resetPuzzleButton').onclick = resetPuzzle;
-document.getElementById('solvePuzzleButton').onclick = solveIt;
-document.getElementById('generateNewPuzzleButton').onclick = generateNewPuzzle;
-
-
-buildSudokuBoard();
-generateNewPuzzle();
-setInterval(examineBoardState, 400);
-
-</script>
+<script src="app.js"></script>
 </html>

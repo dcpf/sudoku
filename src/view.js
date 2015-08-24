@@ -1,5 +1,3 @@
-'use strict';
-
 /*
 * Listen for changes to the puzzle array, and update the sudoku board.
 */
@@ -175,3 +173,13 @@ function boardToArray () {
   }
   return arr;
 }
+
+//document.getElementById('clearPuzzleButton').onclick = clearBoard;
+document.getElementById('resetPuzzleButton').onclick = resetPuzzle;
+document.getElementById('solvePuzzleButton').onclick = solveIt;
+document.getElementById('generateNewPuzzleButton').onclick = generateNewPuzzle;
+
+
+buildSudokuBoard();
+generateNewPuzzle();
+setInterval(examineBoardState, 400);

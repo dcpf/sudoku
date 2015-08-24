@@ -1,5 +1,3 @@
-'use strict';
-
 /**
 * Object containing all functions able to be performed on a sudoku puzzle array. Note that
 * this follows the functional paradigm as opposed to OO, as that seems to make more sense.

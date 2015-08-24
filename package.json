@@ -6,9 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "dpf@theworld.com",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-subtask": "^0.3.4",
+    "gulp-uglify": "^1.2.0",
+    "gulp-wrap": "^0.11.0",
     "jasmine": "^2.3.2"
   }
 }
