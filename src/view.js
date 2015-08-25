@@ -91,7 +91,7 @@ function solveIt () {
 /*
 * Build the table that represents the sudoku board
 */
-function buildSudokuBoard () {
+function buildSudokuBoard (parent) {
   var table = document.createElement('table'),
       tBody = document.createElement('tbody'),
       tr,
@@ -109,7 +109,7 @@ function buildSudokuBoard () {
     tBody.appendChild(tr);
   }
   table.appendChild(tBody);
-  document.getElementById('sudokuBoard').appendChild(table);
+  parent.appendChild(table);
 };
 
 /*
@@ -180,6 +180,6 @@ document.getElementById('solvePuzzleButton').onclick = solveIt;
 document.getElementById('generateNewPuzzleButton').onclick = generateNewPuzzle;
 
 
-buildSudokuBoard();
+buildSudokuBoard(document.getElementById('sudokuBoard'));
 generateNewPuzzle();
 setInterval(examineBoardState, 400);
