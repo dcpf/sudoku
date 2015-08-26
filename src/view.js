@@ -114,7 +114,7 @@ var SudokuView = {
         */
         this.checkUserInput = function (e) {
             if (e.keyCode === 9) {
-            // Tab key - move to next cell.
+                // Tab key - move to next cell.
                 e.target.nextSibling.focus();
             } else if (e.target.textContent || e.keyCode < 49 || e.keyCode > 57) {
                 // Target is aleady populated, or the key is something other than 1-9

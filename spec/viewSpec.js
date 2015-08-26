@@ -54,7 +54,7 @@ describe('Sudoku View Test Suite', function() {
 
 
     /*
-    * Build the sudoku board, populate it with a puzzleArray, call boardToArray(), and then verify that the returned puzzleArray == the original puzzleArray.
+    * Build the sudoku board, populate it with a puzzleArray, call boardToArray(), then verify that the returned puzzleArray == the original puzzleArray.
     */
     it('Tests boardToArray()', function() {
         let view = getSudokuView();
@@ -62,7 +62,22 @@ describe('Sudoku View Test Suite', function() {
         let puzzleArray = Sudoku.generatePuzzleArray();
         view.populateBoard(puzzleArray);
         let puzzleArray2 = view.boardToArray();
-        expect(Sudoku.equals(puzzleArray, puzzleArray2)).toBe(true);
+        expect(Sudoku.equals(puzzleArray2, puzzleArray)).toBe(true);
+    });
+
+
+    /*
+    * Build the sudoku board, populate it with a strippedPuzzleArray, call solveIt(), then verify that the solved puzzleArray == the original puzzleArray.
+    */
+    it('Tests solveIt()', function() {
+        let view = getSudokuView();
+        view.buildSudokuBoard();
+        let puzzleArray = Sudoku.generatePuzzleArray();
+        let strippedPuzzleArray = Sudoku.stripPuzzle(puzzleArray);
+        view.populateBoard(strippedPuzzleArray);
+        view.solveIt();
+        let puzzleArray2 = view.boardToArray();
+        expect(Sudoku.equals(puzzleArray2, puzzleArray)).toBe(true);
     });
 
 
