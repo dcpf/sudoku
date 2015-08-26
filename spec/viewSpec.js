@@ -9,7 +9,7 @@ describe('Sudoku View Test Suite', function() {
     function getEl () {
         let el = document.createElement('div');
         let board = document.createElement('div');
-        board.id = 'sudokuBoard';
+        board.id = SudokuView.SUDOKU_BOARD_ID;
         el.appendChild(board);
         return el;
     }
@@ -17,9 +17,9 @@ describe('Sudoku View Test Suite', function() {
 
     it('Tests buildSudokuBoard()', function() {
         let el = getEl();
-        let view = new SudokuView(el);
+        let view = SudokuView.getInstance(el);
         view.buildSudokuBoard();
-        let table = el.querySelector('#sudokuBoard').firstChild;
+        let table = el.querySelector('#' + SudokuView.SUDOKU_BOARD_ID).firstChild;
         expect(table.tagName).toEqual('TABLE');
         let tbody = table.firstChild;
         expect(tbody.tagName).toEqual('TBODY');
@@ -31,7 +31,7 @@ describe('Sudoku View Test Suite', function() {
             expect(cells.length).toEqual(9);
             for (let j = 0; j < cells.length; j++) {
                 let cell = cells[j];
-                expect(cell.id).toEqual('cell' + i + j);
+                expect(cell.id).toEqual(SudokuView.CELL_ID_PREFIX + i + j);
                 expect(typeof cell.onkeypress).toBe('function');
             }
         }
@@ -49,13 +49,13 @@ describe('Sudoku View Test Suite', function() {
         puzzleArrays.forEach(function(puzzleArray){
             it('Tests populateBoard() with puzzleArray: ' + puzzleArray, function() {
                 let el = getEl();
-                let view = new SudokuView(el);
+                let view = SudokuView.getInstance(el);
                 view.buildSudokuBoard();
                 view.populateBoard(puzzleArray);
                 for (let i = 0; i < 9; i++) {
                     for (let j = 0; j < 9; j++) {
                         let num = puzzleArray[i][j];
-                        let cell = el.querySelector('#cell' + i + j);
+                        let cell = el.querySelector('#' + SudokuView.CELL_ID_PREFIX + i + j);
                         if (num) {
                             expect(parseInt(cell.textContent, 10)).toEqual(num);
                             expect(cell.contentEditable).toEqual('false');
