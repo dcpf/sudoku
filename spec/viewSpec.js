@@ -38,6 +38,35 @@ describe('Sudoku View Test Suite', function() {
     });
 
 
+    it('Tests clearBoard()', function() {
+        let el = getEl();
+        let view = SudokuView.getInstance(el);
+        view.buildSudokuBoard();
+        view.populateBoard(Sudoku.generatePuzzleArray());
+        view.clearBoard();
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                let cell = el.querySelector('#' + SudokuView.CELL_ID_PREFIX + i + j);
+                expect(cell.textContent).toEqual('');
+            }
+        }
+    });
+
+
+    /*
+    * Build the sudoku board, populate it with a puzzleArray, call boardToArray(), and then verify that the returned puzzleArray == the original puzzleArray.
+    */
+    it('Tests boardToArray()', function() {
+        let el = getEl();
+        let view = SudokuView.getInstance(el);
+        view.buildSudokuBoard();
+        let puzzleArray = Sudoku.generatePuzzleArray();
+        view.populateBoard(puzzleArray);
+        let puzzleArray2 = view.boardToArray();
+        expect(Sudoku.equals(puzzleArray, puzzleArray2)).toBe(true);
+    });
+
+
     // Provides a full puzzleArray and stripped puzzleArray for populateBoard() tests
     let puzzleArrays = [
         Sudoku.generatePuzzleArray(),
