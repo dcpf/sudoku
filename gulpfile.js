@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify');
 
-var jsSrcFiles = ['src/Sudoku.js', 'src/view.js'];
+var jsSrcFiles = ['src/Sudoku.js', 'src/view.js', 'src/init.js'];
 
 
 /*

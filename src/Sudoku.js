@@ -279,4 +279,4 @@ var Sudoku = {
     if (x < 9 && y < 9) return [6,6];
   }
 
-}
+};
