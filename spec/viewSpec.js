@@ -4,20 +4,20 @@ describe('Sudoku View Test Suite', function() {
 
 
     /*
-    * Build the element object to pass to: new SudokuView(el)
+    * Return a new SudokuView object with a default el.
     */
-    function getEl () {
+    function getSudokuView () {
         let el = document.createElement('div');
         let board = document.createElement('div');
         board.id = SudokuView.SUDOKU_BOARD_ID;
         el.appendChild(board);
-        return el;
+        return SudokuView.getInstance(el);
     }
 
 
     it('Tests buildSudokuBoard()', function() {
-        let el = getEl();
-        let view = SudokuView.getInstance(el);
+        let view = getSudokuView();
+        let el = view.el;
         view.buildSudokuBoard();
         let table = el.querySelector('#' + SudokuView.SUDOKU_BOARD_ID).firstChild;
         expect(table.tagName).toEqual('TABLE');
@@ -39,8 +39,8 @@ describe('Sudoku View Test Suite', function() {
 
 
     it('Tests clearBoard()', function() {
-        let el = getEl();
-        let view = SudokuView.getInstance(el);
+        let view = getSudokuView();
+        let el = view.el;
         view.buildSudokuBoard();
         view.populateBoard(Sudoku.generatePuzzleArray());
         view.clearBoard();
@@ -57,8 +57,7 @@ describe('Sudoku View Test Suite', function() {
     * Build the sudoku board, populate it with a puzzleArray, call boardToArray(), and then verify that the returned puzzleArray == the original puzzleArray.
     */
     it('Tests boardToArray()', function() {
-        let el = getEl();
-        let view = SudokuView.getInstance(el);
+        let view = getSudokuView();
         view.buildSudokuBoard();
         let puzzleArray = Sudoku.generatePuzzleArray();
         view.populateBoard(puzzleArray);
@@ -77,8 +76,8 @@ describe('Sudoku View Test Suite', function() {
     describe('populateBoard() tests', function() {
         puzzleArrays.forEach(function(puzzleArray){
             it('Tests populateBoard() with puzzleArray: ' + puzzleArray, function() {
-                let el = getEl();
-                let view = SudokuView.getInstance(el);
+                let view = getSudokuView();
+                let el = view.el;
                 view.buildSudokuBoard();
                 view.populateBoard(puzzleArray);
                 for (let i = 0; i < 9; i++) {
