@@ -4,7 +4,7 @@
   "description": "",
   "main": "sudoku.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose"
   },
   "author": "dpf@theworld.com",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "gulp-subtask": "^0.3.4",
     "gulp-uglify": "^1.2.0",
     "gulp-wrap": "^0.11.0",
-    "jasmine": "^2.3.2"
+    "jasmine": "^2.3.2",
+    "jest-cli": "^0.5.0"
   }
 }

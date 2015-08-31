@@ -1,6 +1,5 @@
 'use strict';
 
-// Wrap this in an if stmt so that it can work from the command line or from a browser
 if (typeof jest !== 'undefined') {
     jest.dontMock('../src/Sudoku.js');
     var Sudoku = require('../src/Sudoku.js').Sudoku;

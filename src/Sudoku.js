@@ -280,3 +280,6 @@ var Sudoku = {
   }
 
 };
+
+// Needed for unit tests only
+if (typeof exports !== 'undefined') exports.Sudoku = Sudoku;

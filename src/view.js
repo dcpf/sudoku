@@ -6,7 +6,7 @@ var SudokuView = {
     MSG_ID: 'msg',
     CELL_ID_PREFIX: 'cell',
 
-    getInstance: function (el) {
+    getInstance: function (Sudoku, el) {
 
         this.el = el;
         this.strippedPuzzleArray;
@@ -145,3 +145,5 @@ var SudokuView = {
     }
 }
 
+// Needed for unit tests only
+if (typeof exports !== 'undefined') exports.SudokuView = SudokuView;
