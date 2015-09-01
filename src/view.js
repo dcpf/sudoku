@@ -146,4 +146,4 @@ var SudokuView = {
 }
 
 // Needed for unit tests only
-if (typeof exports !== 'undefined') exports.SudokuView = SudokuView;
+if (typeof exports !== 'undefined') module.exports = SudokuView;

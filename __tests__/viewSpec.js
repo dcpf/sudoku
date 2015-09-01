@@ -3,8 +3,8 @@
 if (typeof jest !== 'undefined') {
     jest.dontMock('../src/Sudoku.js');
     jest.dontMock('../src/view.js');
-    var Sudoku = require('../src/Sudoku.js').Sudoku;
-    var SudokuView = require('../src/view.js').SudokuView;
+    var Sudoku = require('../src/Sudoku.js');
+    var SudokuView = require('../src/view.js');
 }
 
 describe('Sudoku View Test Suite', function() {

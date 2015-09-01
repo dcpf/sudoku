@@ -282,4 +282,4 @@ var Sudoku = {
 };
 
 // Needed for unit tests only
-if (typeof exports !== 'undefined') exports.Sudoku = Sudoku;
+if (typeof exports !== 'undefined') module.exports = Sudoku;
