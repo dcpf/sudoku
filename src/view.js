@@ -1,3 +1,7 @@
+'use strict';
+
+var Sudoku = require('./Sudoku');
+
 var SudokuView = {
 
     SUDOKU_BOARD_ID: 'sudokuBoard',
@@ -6,7 +10,7 @@ var SudokuView = {
     MSG_ID: 'msg',
     CELL_ID_PREFIX: 'cell',
 
-    getInstance: function (Sudoku, el) {
+    getInstance: function (el) {
 
         this.el = el;
         this.strippedPuzzleArray;
@@ -145,5 +149,4 @@ var SudokuView = {
     }
 }
 
-// Needed for unit tests only
-if (typeof exports !== 'undefined') module.exports = SudokuView;
+module.exports = SudokuView;

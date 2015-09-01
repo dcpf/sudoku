@@ -1,4 +1,8 @@
-var view = SudokuView.getInstance(Sudoku, document.getElementById('sudokuGame'));
+'use strict';
+
+var SudokuView = require('./view');
+
+var view = SudokuView.getInstance(document.getElementById('sudokuGame'));
 
 //document.getElementById('clearPuzzleButton').onclick = function () { view.clearBoard(); };
 document.getElementById('resetPuzzleButton').onclick = function () { view.resetPuzzle(); };

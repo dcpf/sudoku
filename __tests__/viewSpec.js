@@ -3,9 +3,10 @@
 if (typeof jest !== 'undefined') {
     jest.dontMock('../src/Sudoku.js');
     jest.dontMock('../src/view.js');
-    var Sudoku = require('../src/Sudoku.js');
-    var SudokuView = require('../src/view.js');
 }
+
+var Sudoku = require('../src/Sudoku.js');
+var SudokuView = require('../src/view.js');
 
 describe('Sudoku View Test Suite', function() {
 
@@ -18,7 +19,7 @@ describe('Sudoku View Test Suite', function() {
         let board = document.createElement('div');
         board.id = SudokuView.SUDOKU_BOARD_ID;
         el.appendChild(board);
-        return SudokuView.getInstance(Sudoku, el);
+        return SudokuView.getInstance(el);
     }
 
 
